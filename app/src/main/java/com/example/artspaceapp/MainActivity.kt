@@ -49,9 +49,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ArtSpaceAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) {
                     ArtSpaceApp(
-                        modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
@@ -78,10 +77,9 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxSize()
             .paint(
-                painter = painterResource(R.drawable.bg),
-                contentScale = ContentScale.Crop
+                painter = painterResource(R.drawable.bg), contentScale = ContentScale.Crop
             )
-            .padding(horizontal = 24.dp, vertical = 18.dp),
+            .padding(horizontal = 24.dp, vertical = 36.dp),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -91,9 +89,7 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
                 .padding(top = 48.dp)
                 .shadow(
-                    elevation = 12.dp,
-                    shape = RoundedCornerShape(16.dp),
-                    clip = false
+                    elevation = 12.dp, shape = RoundedCornerShape(16.dp), clip = false
                 )
                 .background(Color.White, RoundedCornerShape(16.dp))
                 .padding(28.dp),
@@ -106,9 +102,7 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
                     .aspectRatio(3f / 4f)
                     .clip(RoundedCornerShape(6.dp))
                     .border(
-                        width = 6.dp,
-                        color = Color.Black,
-                        shape = RoundedCornerShape(6.dp)
+                        width = 6.dp, color = Color.Black, shape = RoundedCornerShape(6.dp)
                     ),
                 contentScale = ContentScale.Crop
             )
@@ -139,9 +133,7 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
                     color = Color.Black
                 )
                 Text(
-                    text = "  (${currentArtwork.year})",
-                    fontSize = 16.sp,
-                    color = Color.DarkGray
+                    text = "  (${currentArtwork.year})", fontSize = 16.sp, color = Color.DarkGray
                 )
             }
         }
@@ -161,16 +153,13 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
             }
 
             Button(
-                onClick = goNext,
-                shape = RoundedCornerShape(50),
-                modifier = Modifier.width(150.dp)
+                onClick = goNext, shape = RoundedCornerShape(50), modifier = Modifier.width(150.dp)
             ) {
                 Text(stringResource(R.string.next))
             }
         }
     }
 }
-
 
 
 @Preview(showBackground = true)
